@@ -22,7 +22,6 @@ struct ContentView: View {
                 self.model.fetchAllCodes()
             }, label: {
                 Text("Update promocodes")
-                    .foregroundColor(.white)
                     .font(.body)
             }))
         }

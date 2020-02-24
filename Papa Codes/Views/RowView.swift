@@ -14,10 +14,12 @@ struct RowView: View {
     
     var body: some View {
         HStack {
+            Image("papacodes").resizable().frame(width: 60, height: 60)
+            
             VStack(alignment: .leading) {
                 Text("Условия: \(promocode.name)")
                 Spacer()
-                Text("Промокод: \(promocode.code)")
+                Text("Промокод: \(promocode.code)").bold()
                 Spacer()
             }
         }
