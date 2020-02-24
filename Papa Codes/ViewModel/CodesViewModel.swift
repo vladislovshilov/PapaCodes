@@ -23,7 +23,8 @@ final class CodesViewModel: ObservableObject {
             guard let `self` = self else { return }
             switch result {
             case .success(let codes):
-                self.promocodes = codes
+                self.promocodes = codes.sorted { $0.price < $1.price }
+                                       .sorted { $0.isGiftCode && !$1.isGiftCode }
             case .failure(let error):
                 self.error = error.localizedDescription
             }

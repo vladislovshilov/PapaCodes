@@ -15,7 +15,7 @@ struct RowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Условия:\(promocode.name)")
+                Text("Условия: \(promocode.name)")
                 Spacer()
                 Text("Промокод: \(promocode.code)")
                 Spacer()
