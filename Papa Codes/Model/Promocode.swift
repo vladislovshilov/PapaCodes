@@ -44,11 +44,14 @@ struct Promocode: Decodable, Hashable, Identifiable {
             let startIndex = name.index(dashIndex, offsetBy: 5)
             let endIndex = name.index(startIndex, offsetBy: 4)
             let range = startIndex...endIndex
-            price = Double(name[range]) ?? 0
+            let priceString = name[range].replacingOccurrences(of: ",", with: ".")
+            price = Double(priceString) ?? 0
         }
         else {
             price = 0
         }
+        
+        print(price)
     }
     
     init() {
